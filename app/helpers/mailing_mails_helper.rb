@@ -13,10 +13,10 @@ module MailingMailsHelper
   #----------------------------------------------------------------------------
   def link_to_mail_delete(mailing_mail)
     link_to(t(:yes_button), 
-      :url => mailing_mail_path(mailing_mail),
+      mailing_mail_path(mailing_mail),
       :remote => true,
       :method => :delete,
-      :before => visual_effect(:highlight, dom_id(mailing_mail), :startcolor => "#ffe4e1")
+      :onclick => "this.href = this.href.replace(/cancel=(true|false)/,'cancel='+ Element.visible('confirm_mailing_mail_#{mailing_mail.id}'));"
     )
   end 
   
@@ -50,10 +50,7 @@ module MailingMailsHelper
   #----------------------------------------------------------------------------
   def mailing_mails_status_checkbox(status, count)
     checked = (session[:filter_by_mailing_mail_status] ? session[:filter_by_mailing_mail_status].split(",").include?(status.to_s) : count.to_i > 0)
-#    text = remote_function(:url => filter_mailing_path(@mailing), :with => %Q("status=" + $$("input[name='status[]']").findAll(function (el) { return el.checked }).pluck("value") ) )
-    text = remote_function(:url => filter_mailing_path(@mailing), :with => %Q('status=' + $$('input[name=\\'status[]\\']').findAll(function (el) { return el.checked }).pluck('value') ) )
-    puts ">>>>>>>>>" + text.inspect
-    check_box_tag("status[]", status, checked, :onclick => text )
+    check_box_tag("status[]", status, checked, :onclick => remote_function(:url => filter_mailing_path(@mailing), :with => %Q('status=' + $$('input[name=\\'status[]\\']').findAll(function (el) { return el.checked }).pluck('value') ) ) )
   end   
   
 end

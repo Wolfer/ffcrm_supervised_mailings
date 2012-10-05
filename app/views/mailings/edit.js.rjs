@@ -1,7 +1,7 @@
 id = dom_id(@mailing)
 
 if params[:cancel].true? # <--------------------- Hide [Edit mailing]
- puts ">>>>>>>>>>>>>>ASDASD"
+
   if called_from_landing_page?
     page.call "crm.flip_form", :edit_mailing
     page.call "crm.set_title", :edit_mailing, @mailing.name

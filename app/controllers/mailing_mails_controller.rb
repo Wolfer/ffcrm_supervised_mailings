@@ -50,9 +50,9 @@ class MailingMailsController < ApplicationController
     if @mailing_mail.status == "ready"
       # Sending email
       begin
-        new_email = MailingNotifier.create_simple(@current_user, @mailing_mail, @mailing, params[:mailing_mail][:subject],  @template.auto_link(@template.simple_format params[:mailing_mail][:body]), @recipients, params[:sent_by_email])
+        new_email = MailingNotifier.simple(@current_user, @mailing_mail, @mailing, params[:mailing_mail][:subject],  view_context.auto_link(view_context.simple_format params[:mailing_mail][:body]), @recipients, params[:sent_by_email])
 
-        MailingNotifier.deliver(new_email)
+        new_email.deliver
 
         # Now saving with status sent, sent_at date and recipients
         params[:mailing_mail][:status] = "sent"
@@ -87,9 +87,11 @@ class MailingMailsController < ApplicationController
             format.xml  { render :xml => @mailing_mail.errors, :status => :unprocessable_entity }
           end
         end
-      rescue
+      rescue Exception => e
         # Error sending email
-        flash[:error] = t :error_sendig_mail
+        Rails.logger.error "[ERROR] #{e.to_s}"
+        Rails.logger.error e.backtrace.first(5).join("\n")
+        flash[:error] = t(:error_sendig_mail) + e.to_s
         #redirect_to(mailings_path)
         render :update do |page|
           page.redirect_to(@mailing)

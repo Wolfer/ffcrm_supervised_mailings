@@ -13,11 +13,18 @@
         
   .indent
     - if mail.status == "sent"
-      = t(:mailing_sent, :models => t(mail.mailable_type.to_s.downcase), :link => get_asset_link_name(mail.mailable), :to => auto_link(mail.recipients),:time_ago => time_ago_in_words(mail.sent_at), :user => (mail.user.id == @current_user.id ? t(:me) : h(mail.user.full_name)))
+      %b= t(mail.mailable_type.to_s.downcase) + ": "
+      = get_asset_link_name(mail.mailable)
+      = t(:sent_to)
+      = auto_link(mail.recipients)
+      = " #{time_ago_in_words(mail.sent_at)}"
+      = t(:by_user)
+      =(mail.user.id == @current_user.id ? t(:me) : h(mail.user.full_name))
       - if mail.user.email != mail.sent_by_email
         = t(:mailing_sent_by, mail.sent_by_email)
     - else
-      = raw t(:mailing_from, :models => t(mail.mailable_type.to_s.downcase), :link => get_asset_link(mail.mailable))
+      %b= t(mail.mailable_type.to_s.downcase) + ": "
+      = get_asset_link(mail.mailable)
     %tt
       - unless mail.status == "sent"
         = " - " << t(:added_by, :time_ago => time_ago_in_words(mail.created_at), :user => (mail.user.id == @current_user.id ? t(:me) : h(mail.user.full_name)))

@@ -1,6 +1,6 @@
 id = dom_id(@mailing)
 
-if @mailing.deleted?
+if @mailing.destroyed?
   page[id].visual_effect :blind_up, :duration => 0.25
 else
   page.call "crm.flick", dom_id(@mailing, :confirm), :remove

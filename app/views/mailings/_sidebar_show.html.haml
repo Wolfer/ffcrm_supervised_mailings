@@ -6,7 +6,7 @@
 
   - unless @mailing.attc_file_name.blank?
     %li
-      %dt#mailing_attachment= link_to truncate(@mailing.attc_file_name, 20, "..."), attachment_mailing_path(@mailing)
+      %dt#mailing_attachment= link_to truncate(@mailing.attc_file_name, :length => 20, :omission => "..."), attachment_mailing_path(@mailing)
       %tt #{t(:attachment)}:
   
   .caption #{t(:find_mails)}
