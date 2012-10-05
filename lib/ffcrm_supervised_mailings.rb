@@ -1,0 +1,1 @@
+require "ffcrm_supervised_mailings/engine"

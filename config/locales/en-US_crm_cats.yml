@@ -1,0 +1,83 @@
+en-US:
+  language: English
+
+  # crm_supervised_mailings plugin internalization.
+  #----------------------------------------------------------------------------
+  mailing_title: Mailings
+  mailing_small: Mailing
+  mailings_small: mailings
+  create_mailing: Create mailing
+  mailings: Mailings
+  mailing: Mailing
+  mails: mails
+  add_mailing_mails: Add the {{value}} listed
+  add_mails_from: Add emails from {{value}}
+  add_mails_criteria: with {{value}} search criteria
+  start_mailing: Start mailing
+  mailing_mails: mails list
+  open: Open
+  finished: Finished
+  new: Pending
+  sent: Sent
+  mailing_from: "<b>{{models}}</b>: {{link}}"
+  mailing_from_ready: "<b>{{models}}</b>: is ready to be sent."
+  mailing_from_needs_data: "<b>{{models}}</b>: needs the following fields filled {{information}}"
+  needs_update: Update Needed
+  check: Check
+  mailing_show_per_page: Show {{number}} {{models}} per page showing {{filter}}.
+  mailing_mails_show_filter: Showing {{filter}}.
+  mailings_options: Visualization options
+  mailing_summary: Mailing summary
+  option_open: Opened
+  option_finished: Finished
+  option_new: New
+  option_sent: Sent
+  option_needs_data: Missing data
+  option_ready: Ready for send
+  option_status: Status
+  add: Add
+  mails_options: Options for mails list
+  how_to_add_emails: You can add mails from the accounts, contact and leads pages
+  send: Send
+  mailing_sent: "<b>{{models}}</b>: {{link}} - sent to {{to}} {{time_ago}} ago by {{user}}"
+  mail_participants: <b>From:</b> {{from}} <b>to:</b> {{to}}
+  mail_participants_accounts: <b>From:</b> {{from}} <b>to:</b>
+  profile_needs_update: Your email credentials are not set, please {{link}} your profile first
+  no_mails_to_send: No mails to send
+  subject: Subject
+  body: Body
+  edit_asset: Edit {{value}}
+  attachment: Attachment
+  with_attachment: Current attachment {{value}} or upload new
+  with_attachment_show: "Attachment: {{value}}"
+  without_attachment: Without attachment
+  upload_attachment: Upload attachment
+  overwrite_attachment: Overwrite attachment
+  save_mailing: Save
+  mail_info: Mail information
+  mailing_name: Mailing name
+  intro_mailing: You need to fill the subject and body.
+  mail_status: Email status
+  mail_status_ok: This message is ready to send
+  mail_status_ko: The following information is missing
+  mail_status_ko_info: Please, fill in the missing information or delete the empty fields before sending the message.
+  general_placeholders: General placeholders
+  contact_leads_placeholders: Contacts and leads placeholders
+  accounts_placeholders: Account placeholders
+  mail_needs_data: "<b>The following information is missing</b>: {{value}}"
+  mailing_created_correctly: Mailing created correctly
+  mailing_not_created_correctly: Mailing could not be created
+  mailing_updated_correctly: Mailing updated correctly
+  mailing_not_updated_correctly: Mailing not updated
+  allready_sent: Already sent
+  ready: Pending
+  needs_data: Information update required
+  total_mails: "<b>Total</b>"
+  contact_email: "Email contact: {{value}}"
+  mail_to: Email to {{value}}
+  find_mails: Find emails
+  mailing_attachment_intro: You can attach a file to the mail
+  missing_placeholders: Missing placeholders to fill!
+  mailing_sent_by: " using the email {{value}}"
+  to: To
+  mail_from: From

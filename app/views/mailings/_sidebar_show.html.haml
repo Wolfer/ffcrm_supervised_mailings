@@ -1,0 +1,27 @@
+.panel#summary
+  .caption #{t(:mailing_summary)}
+  %li
+    %dt#mailing_status= t(@mailing.status)
+    %tt #{t(:status)}:
+
+  - unless @mailing.attc_file_name.blank?
+    %li
+      %dt#mailing_attachment= link_to truncate(@mailing.attc_file_name, 20, "..."), attachment_mailing_path(@mailing)
+      %tt #{t(:attachment)}:
+  
+  .caption #{t(:find_mails)}
+  - MailingMail.statuses.each do |key|
+    %li
+      %dt#mailing_status= @mails_stats_total[key]
+      %tt
+        = raw mailing_mails_status_checkbox(key, @mails_stats_total[key])
+        = t(key)
+
+  .check_box
+    %div{:style => "float:right;"}
+      %b= @mails_stats_total[:all]
+    %b=raw t(:total_mails)
+        
+  - unless @mailing.background_info.blank?
+    .caption #{t(:background_info)}
+    = auto_link(simple_format h(@mailing.background_info)) 

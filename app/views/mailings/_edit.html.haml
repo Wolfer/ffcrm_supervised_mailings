@@ -1,0 +1,13 @@
+.remote
+  - form_for(@mailing, :html => { :multipart => true, :onsubmit => "$('mailing_submit').disabled = true" }) do |f|
+    = link_to_close edit_mailing_path(@mailing)
+    = f.hidden_field :user_id
+    = f.error_messages
+    = render :partial => "mailings/top_section",   :locals => { :f => f, :edit => true } 
+    = render :partial => "mailings/mail"       ,   :locals => { :f => f, :edit => true }
+    = render :partial => "mailings/attachment" ,   :locals => { :f => f, :edit => true }
+    = render :partial => "mailings/permissions",   :locals => { :f => f, :edit => true }      
+    .buttonbar
+      = f.submit t(:save_mailing)
+      #{t :or}
+      = link_to_cancel edit_mailing_path(@mailing)

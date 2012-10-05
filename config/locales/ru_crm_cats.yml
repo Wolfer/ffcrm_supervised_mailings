@@ -1,0 +1,85 @@
+ru-RU:
+  language: Русский
+
+  # crm_supervised_mailings plugin internalization.
+  #----------------------------------------------------------------------------
+  mailing_title: Mailings
+  mailing_small: Mailing
+  mailings_small: mailings
+  mailing_needs_name: Укажите имя для рассылки
+  mailing_error_creating: Неудалось создать рассылку
+  create_mailing: Создать рассылку
+  mailings: Рассылки
+  mailing: Рассылка
+  mails: Письма
+  add_mailing_mails: Add the {{value}} listed
+  add_mails_from: Add emails from {{value}}
+  add_mails_criteria: with {{value}} search criteria
+  start_mailing: Начать рассылку
+  mailing_mails: mails list
+  open: Открыта
+  finished: Завершенный
+  new: Новое
+  sent: Отослано
+  mailing_from: "<b>{{models}}</b>: {{link}}"
+  mailing_from_ready: "<b>{{models}}</b>: is ready to be sent."
+  mailing_from_needs_data: "<b>{{models}}</b>: needs the following fields filled {{information}}"
+  needs_update: С ошибкой
+  check: Перепроверить
+  mailing_show_per_page: Показать {{number}} {{models}} per page showing {{filter}}.
+  mailing_mails_show_filter: Showing {{filter}}.
+  mailings_options: Visualization options
+  mailing_summary: Информация о рассылке
+  option_open: Открытая
+  option_finished: Завершенная
+  option_new: Новая
+  option_sent: Послать
+  option_needs_data: Не хватает данных
+  option_ready: Готово к отправке
+  option_status: Статус
+  add: Добавить
+  mails_options: Options for mails list
+  how_to_add_emails: You can add mails from the accounts, contact and leads pages
+  send: Отправить
+  mailing_sent: "<b>{{models}}</b>: {{link}} - sent to {{to}} {{time_ago}} ago by {{user}}"
+  mail_participants: <b>От:</b> {{from}} <b>для:</b> {{to}}
+  mail_participants_accounts: <b>От:</b> {{from}} <b>для:</b>
+  profile_needs_update: Your email credentials are not set, please {{link}} your profile first
+  no_mails_to_send: Нет писем к отправке
+  subject: Тема
+  body: Тело
+  edit_asset: Редактировать {{value}}
+  attachment: Приложение
+  with_attachment: Current attachment {{value}} or upload new
+  with_attachment_show: "Attachment: {{value}}"
+  without_attachment: Without attachment
+  upload_attachment: Загрузить файл
+  overwrite_attachment: Заменить приложеный файл
+  save_mailing: Сохранить
+  mail_info: Mail information
+  mailing_name: Mailing name
+  intro_mailing: You need to fill the subject and body.
+  mail_status: Статус письма
+  mail_status_ok: Готово к отправке
+  mail_status_ko: Следующая информация отсутствует
+  mail_status_ko_info: Пожалуйста, заполните недостающие поля или удалите пустые перед отправкой.
+  general_placeholders: General placeholders
+  contact_leads_placeholders: Contacts and leads placeholders
+  accounts_placeholders: Account placeholders
+  mail_needs_data: "<b>Следующая информация отсутствует</b>: {{value}}"
+  mailing_created_correctly: Рассылка создана
+  mailing_not_created_correctly: Рассылка не может быть создана
+  mailing_updated_correctly: Рассылка обновлена
+  mailing_not_updated_correctly: Рассылка не обновлена
+  allready_sent: Уже отправлено
+  ready: Готово к отправке
+  needs_data: Information update required
+  total_mails: Всего
+  contact_email: "Email contact: {{value}}"
+  mail_to: Email to {{value}}
+  find_mails: Сортировка
+  mailing_attachment_intro: Вы можете прикрепить файл к письму
+  missing_placeholders: Missing placeholders to fill!
+  mailing_sent_by: " using the email {{value}}"
+  to: Кому
+  mail_from: От кого

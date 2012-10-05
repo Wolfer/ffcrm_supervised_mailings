@@ -1,0 +1,38 @@
+= styles_for :mailing
+
+- content_for :javascript do
+  - #FIXME what the fuck
+  = render :file => "mailings/crm_mailings", :formats => [:js]
+
+- content_for :styles do
+  = render :file => "mailings/crm_mailings", :formats => [:css]
+
+#confirm{ hidden }
+.title_tools#menu
+  = link_to(t(:check), check_mailing_path(@mailing)) + " | "
+  = link_to_inline(:edit_mailing, edit_mailing_path(@mailing), :text => t(:edit)) + " | "
+  = link_to_function(t(:delete) + '?', confirm_delete(@mailing))
+.title#edit_mailing_title= h(@mailing.name)
+
+%div#edit_mailing{ hidden }
+
+-#-----------------------------------------------------------------------------
+%br
+.title_tools#sub_menu
+  = link_to(t(:start_mailing), start_mailing_path(@mailing), :remote => :true) unless @mailing_mails.blank?
+  = link_to_inline(:options, options_mails_mailings_path, { :text=> t(:options), :related => @mailing.id, :class => "subtitle_tools" })
+.subtitle#create_mailing_mail_title= t(:mailing_mails, t(@current_user.pref[:mailing_mails_filter] || MailingMail.filter))
+.remote#create_mailing_mail{ hidden }
+.remote#options{ hidden }
+.list#mailing_mails
+  - unless @mailing_mails.blank?  
+    = render :partial => "mailing_mails/mail", :collection => @mailing_mails
+  - else
+    = render :partial => "mailing_mails/empty"
+
+- if params[:edit].true?
+  %script{:type =>  'text/javascript'}
+    = render :update do |page|
+      = page.replace_html :edit_mailing, :partial => "edit"
+      = page.call "crm.flip_form", :edit_mailing
+      = page.call "crm.set_title", :edit_mailing, "#{t :edit} #{@mailing.name}"
