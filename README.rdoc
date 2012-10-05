@@ -1,3 +1,19 @@
-= FfcrmSupervisedMailings
+==Supervised Mailings plugin for Fat Free CRM on Rails 3
 
-This project rocks and uses MIT-LICENSE.
+
+Supervised mass-mailing app for FatFreeCrm. I'm just get https://github.com/tractis/crm_supervised_mailings version and rewrite it for work with Rails 3.
+
+==Installation
+
+
+The plugin can be installed by running:
+
+    script/plugin install git://github.com/tractis/crm_supervised_mailings.git
+    
+Then run the following command:
+
+    rake db:migrate:plugin NAME=crm_supervised_mailings
+
+Then restart your web server.
+
+Copyright (c) 2010 by Tractis (https://www.tractis.com), released under the MIT License
